@@ -46,7 +46,7 @@ export class EmployeesComponent implements OnInit {
     }
     if (this.person.controls[attName].hasError('minlength')) {
       temp += '* minimum characters ';
-      if (attName == 'entreprise') {
+      if (attName == 'telephone') {
         temp += '10';
       } else {
         temp += '2';
