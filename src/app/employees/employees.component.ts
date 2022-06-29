@@ -15,7 +15,15 @@ export class EmployeesComponent implements OnInit {
     telephone: ['', [Validators.required, Validators.minLength(10)]],
   });
 
-  people: any[] = [];
+  people: any[] = [
+    {
+      nom: 'Aa',
+      prenom: 'Bb',
+      email: 'aabb@cc.org',
+      entreprise: 'Cc',
+      telephone: '0123456789',
+    },
+  ];
 
   submitted: boolean = false;
 
