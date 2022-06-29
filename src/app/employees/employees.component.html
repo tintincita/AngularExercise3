@@ -1,0 +1,40 @@
+
+<div class="background" *ngFor="let person of people">
+  <div class="card-header">
+    {{ person.nom }} {{person.prenom}}
+    <div class="card">
+      <div class="name">
+        {{ person.entreprise }}
+      </div>
+      <div class="info">
+        <p>eMail: {{ person.email }}</p>
+        <p>Téléphone: {{ person.telephone }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<form [formGroup]="person" (ngSubmit)="onSubmit()" class="container">
+
+  <label for="nom">Nom</label>
+  <input type="text" formControlName="nom">
+  <span *ngIf="person.controls['nom'].invalid && submitted">{{whichError('nom')}}</span>
+  <label for="prenom">Prenom</label>
+  <input type="text" formControlName="prenom">
+  <span *ngIf="person.controls['prenom'].invalid && submitted">{{whichError('prenom')}}</span>
+  <label for="entreprise">Entreprise</label>
+  <input type="text" formControlName="entreprise">
+  <span *ngIf="person.controls['entreprise'].invalid && submitted">{{whichError('entreprise')}}</span>
+  <label for="email">email adresse</label>
+  <input type="text" formControlName="email">
+  <span *ngIf="person.controls['email'].invalid && submitted">{{whichError('email')}}</span>
+  <label for="telephone">Telephone</label>
+  <input type="text" formControlName="telephone">
+  <span *ngIf="person.controls['telephone'].invalid && submitted">{{whichError('telephone')}}</span>
+
+
+  <button type="submit">Ajouter</button>
+</form>
+
